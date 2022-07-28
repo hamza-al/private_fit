@@ -89,19 +89,13 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Align(
-                  child: Column(
+                Positioned(
+                  top: 110,
+                  right: 70,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ElevatedButton(
-                        onPressed: () {
-                          AutoRouter.of(context)
-                              .replace(const ScannerPageRoute());
-                        },
-                        child: const Icon(
-                          Icons.search_off_outlined,
-                          size: 20,
-                        ),
-                      ),
                       ElevatedButton(
                         onPressed: () {
                           context.read<HomeBloc>().add(
@@ -113,13 +107,23 @@ class HomePage extends StatelessWidget {
                           size: 20,
                         ),
                       ),
+                      ElevatedButton(
+                        onPressed: () {
+                          AutoRouter.of(context)
+                              .replace(const ScannerPageRoute());
+                        },
+                        child: const Icon(
+                          Icons.search_off_outlined,
+                          size: 20,
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ],
             ),
           );
-          // );
+          // );q
         },
       ),
     );
